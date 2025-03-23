@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="favicon.jpg">
+    <title>11 Diamond Albums</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .album {
+            text-align: center;
+            width: calc(25% - 20px);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .album img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+        .album:hover {
+            transform: scale(1.1);
+        }
+        .album:hover img {
+            transform: scale(1.1);
+        }
+        .album p {
+            margin: 0;
+        }
+        #player {
+            display: none;
+            margin: 20px auto;
+            text-align: center;
+        }
+        #player audio {
+            width: 100%;
+            max-width: 600px;
+        }
+    </style>
+    <script>
+        function playSong(songUrl) {
+            var playerDiv = document.getElementById('player');
+            var audio = document.getElementById('audioPlayer');
+            audio.src = songUrl;
+            audio.load();
+            audio.play();
+            playerDiv.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>11 Diamond Albums</h1>
+    <div class="row">
+        <div class="album" onclick="playSong('songs/eminem_show.mp3')">
+            <img src="eminem_show.jpg" alt="The Eminem Show">
+            <p>Eminem - The Eminem Show</p>
+        </div>
+        <div class="album" onclick="playSong('songs/tupac_all_eyez_on_me.mp3')">
+            <img src="tupac_all_eyez_on_me.jpg" alt="All Eyez On Me">
+            <p>Tupac - All Eyez On Me</p>
+        </div>
+        <div class="album" onclick="playSong('songs/biggie_life_after_death.mp3')">
+            <img src="biggie_life_after_death.jpg" alt="Life After Death">
+            <p>Biggie Smalls - Life After Death</p>
+        </div>
+        <div class="album" onclick="playSong('songs/tupac_greatest_hits.mp3')">
+            <img src="tupac_greatest_hits.jpg" alt="Greatest Hits">
+            <p>Tupac - Greatest Hits</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="album" onclick="playSong('songs/eminem_marshall_mathers_lp.mp3')">
+            <img src="eminem_marshall_mathers_lp.jpg" alt="The Marshall Matters LP">
+            <p>Eminem - The Marshall Matters LP</p>
+        </div>
+        <div class="album" onclick="playSong('songs/outkast_speakerbox_thelovebelow.mp3')">
+            <img src="outkast_speakerbox_thelovebelow.jpg" alt="SpeakerBox/TheLoveBelow">
+            <p>Outkast - SpeakerBox/TheLoveBelow</p>
+        </div>
+        <div class="album" onclick="playSong('songs/beastie_licensed_to_ill.mp3')">
+            <img src="beastie_licensed_to_ill.jpg" alt="Licensed To III">
+            <p>Beastie Boys - Licensed To III</p>
+        </div>
+        <div class="album" onclick="playSong('songs/mc_hammer_please_hammer_dont.mp3')">
+            <img src="mc_hammer_please_hammer_dont.jpg" alt="Please Hammer Don't...">
+            <p>MC Hammer - Please Hammer Don't Hurt 'Em</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="album" onclick="playSong('songs/lauryn_hill_miseducation_of.mp3')">
+            <img src="lauryn_hill_miseducation_of.jpg" alt="The Miseducation Of...">
+            <p>Lauryn Hill - The Miseducation Of Lauryn Hill</p>
+        </div>
+        <div class="album" onclick="playSong('songs/nelly_country_grammar.mp3')">
+            <img src="nelly_country_grammar.jpg" alt="Country Grammar">
+            <p>Nelly - Country Grammar</p>
+        </div>
+        <div class="album" onclick="playSong('songs/eminem_curtain_call.mp3')">
+            <img src="eminem_curtain_call.jpg" alt="Curtain Call">
+            <p>Eminem - Curtain Call</p>
+        </div>
+    </div>
+    <div id="player">
+        <audio id="audioPlayer" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</div>
+
+</body>
+</html>
